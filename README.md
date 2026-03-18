@@ -191,18 +191,6 @@ Each flying obstacle has **unique wing animations**:
 - 🦅 **Flying obstacles** - Time your jumps for different heights
 - 📈 **Practice** - Start on Easy to learn patterns
 
-## 🐛 Bug Fixes (v1.0.0)
-
-### Fixed Issues:
-✅ Pine tree trunk now connects properly with leaves
-✅ Flying obstacles have proper visible wings with animation
-✅ Obstacle sizes adjusted for balance
-✅ Flying heights optimized for playability
-✅ Pause screen now has Restart and Menu buttons
-✅ Difficulty-based high scores working correctly
-✅ Heart display shows correct amount per difficulty
-✅ Background music stops/resumes properly
-✅ Power-up notifications clear correctly
 
 ## 📋 Game Structure
 
