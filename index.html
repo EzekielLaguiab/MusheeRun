@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🍄 Mushee Run</title>
+  <link rel="icon" type="image/x-icon" href="mushee.ico" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- START SCREEN -->
+<div id="startScreen" class="screen active">
+  <div class="screen-bg">
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="floating-shroom s1">🍄</div>
+    <div class="floating-shroom s2">⭐</div>
+    <div class="floating-shroom s3">🍄</div>
+    <div class="floating-shroom s4">🌿</div>
+  </div>
+  <div class="title-block">
+    <div class="title-icon">🍄</div>
+    <h1 class="game-title">Mushee<br/><span>Run</span></h1>
+    <p class="subtitle">Jump, dodge & collect!</p>
+  </div>
+  <div class="hiscore-box" id="hiScoreDisplay">🏆 Best: <span id="hiScoreVal">0</span></div>
+  
+  <!-- Difficulty Selector Dropdown -->
+  <div class="difficulty-selector">
+    <label for="difficultySelect" class="diff-select-label">Choose Difficulty:</label>
+    <select id="difficultySelect" class="difficulty-dropdown">
+      <option value="easy">🌱 Easy - 5 Hearts, Slower</option>
+      <option value="medium" selected>⚡ Medium - 3 Hearts, Normal</option>
+      <option value="hard">🔥 Hard - 2 Hearts, Faster</option>
+    </select>
+  </div>
+  
+  <button class="btn-start" id="startBtn">▶ Start Game</button>
+  <div class="controls-hint">
+    <span>⌨️ Space / ↑ to jump</span>
+    <span>📱 Tap to jump</span>
+  </div>
+</div>
+
+<!-- GAME SCREEN -->
+<div id="gameScreen" class="screen">
+  <div id="hud">
+    <div class="hud-item">
+      <span class="hud-label">Score</span>
+      <span class="hud-val" id="scoreDisplay">0</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">Level</span>
+      <span class="hud-val" id="levelDisplay">1</span>
+    </div>
+    <div class="hud-item hud-health">
+      <span class="hud-label">Health</span>
+      <div id="healthBar">
+        <span class="heart" id="h1">❤️</span>
+        <span class="heart" id="h2">❤️</span>
+        <span class="heart" id="h3">❤️</span>
+        <span class="heart" id="h4">❤️</span>
+        <span class="heart" id="h5">❤️</span>
+      </div>
+    </div>
+    <button class="btn-pause" id="pauseBtn">⏸</button>
+    
+  </div>
+  <canvas id="gameCanvas"></canvas>
+  <div id="powerupNotif" class="powerup-notif hidden"></div>
+</div>
+
+<!-- PAUSE SCREEN -->
+<div id="pauseScreen" class="screen overlay-screen">
+  <div class="overlay-card">
+    <div class="overlay-icon">⏸️</div>
+    <h2>Paused</h2>
+    <p>Take a breather, Mushee!</p>
+    <button class="btn-resume" id="resumeBtn">▶ Resume</button>
+    <button class="btn-start" id="pauseRestartBtn">🔄 Restart</button>
+    <button class="btn-menu" id="pauseMenuBtn">🏠 Menu</button>
+  </div>
+</div>
+
+<!-- GAME OVER SCREEN -->
+<div id="gameOverScreen" class="screen overlay-screen">
+  <div class="overlay-card go-card">
+    <div class="overlay-icon go-icon">💥</div>
+    <h2>Mushee Over!</h2>
+    <div id="difficultyBadge" class="difficulty-badge">Medium</div>
+    <div class="go-scores">
+      <div class="go-score-item">
+        <span class="go-label">Score</span>
+        <span class="go-val" id="finalScore">0</span>
+      </div>
+      <div class="go-score-item">
+        <span class="go-label">Level</span>
+        <span class="go-val" id="finalLevel">1</span>
+      </div>
+      <div class="go-score-item">
+        <span class="go-label">Best</span>
+        <span class="go-val" id="finalBest">0</span>
+      </div>
+    </div>
+    <div id="newRecordBadge" class="new-record hidden">🎉 New Record!</div>
+    <button class="btn-start" id="restartBtn">🔄 Play Again</button>
+    <button class="btn-menu" id="menuBtn">🏠 Menu</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
